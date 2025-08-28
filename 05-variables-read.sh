@@ -4,4 +4,4 @@
 
 echo "Please enter your name"
 read USERNAME
-echi "User name entered $USERNAME"
+echo "User name entered $USERNAME"
