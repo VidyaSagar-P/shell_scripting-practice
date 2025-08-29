@@ -17,7 +17,7 @@ dnf list installed mysql #first checking mysql wheather it already installed or 
 
 if [ $? -ne 0 ]
 then
-    echo -e "$R Mysql is not installed. Going to install"
+    echo -e "$R Mysql is not installed. Going to install $N"
     dnf install mysql -y
     if [ $? -ne 0 ] 
     then
