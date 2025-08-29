@@ -27,7 +27,7 @@ then
         echo -e "$G Mysql installation...SUCCESS"
     fi
 else
-    echo -e "$G Mysql is already Installed"
+    echo -e "Mysql is already $G Installed $N"
 fi   
 
 
