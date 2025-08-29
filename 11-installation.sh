@@ -11,12 +11,12 @@ then
 fi
 
 #installing my Mysql server
-dnf list installed mysqls #first checking mysql wheather it already installed or not
+dnf list installed mysql #first checking mysql wheather it already installed or not
 
 if [ $? -ne 0 ]
 then
     echo "Mysql is not installed. Going to install"
-    dnf install mysqls -y
+    dnf install mysql -y
     if [ $? -ne 0 ] 
     then
         echo "Mysql installation...FAILED"
