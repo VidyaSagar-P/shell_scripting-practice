@@ -1,7 +1,9 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
+R="\e[31m"
+G="\e[31m"
+N="\e[31m"
 
 # condition:check for root user
 if [ $USERID -ne 0 ]
@@ -25,7 +27,7 @@ then
         echo "Mysql installation...SUCCESS"
     fi
 else
-    echo "Mysql is already Installed"
+    echo -e "$G Mysql is already Installed"
 fi   
 
 
