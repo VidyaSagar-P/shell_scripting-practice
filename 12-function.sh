@@ -19,7 +19,8 @@ VALIDATE(){
         echo "$2 IS SUCCESS"
     fi
 }
-
+# -------------------
+ROOT
 #Mysql installation
 dnf list installed mysql
 if [ $? -ne 0 ]
