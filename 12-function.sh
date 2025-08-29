@@ -2,14 +2,16 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0 ]
-then 
-    echo "Proceed with root priveleges"
-    exit 1
-fi
+#functions
+ROOT(){
+    if [ $USERID -ne 0 ]
+    then 
+        echo "Proceed with root priveleges"
+        exit 1
+    fi
+}
 
-#function
-VALIDATE (){
+VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo "$2 is FAILED"
@@ -19,11 +21,11 @@ VALIDATE (){
 }
 
 #Mysql installation
-dnf list installed mysqls
+dnf list installed mysql
 if [ $? -ne 0 ]
 then
     echo "Mysql not installed, Going to install now"
-    dnf install mysqls -y
+    dnf install mysql -y
     VALIDATE $? "Mysql installing"
     
 else
