@@ -7,7 +7,7 @@ do
     echo $i
 done
 
-for k in {20..30}
+for k in {11..20}
 do
     echo $k
 done
