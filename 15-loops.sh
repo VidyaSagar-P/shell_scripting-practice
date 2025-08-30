@@ -25,20 +25,17 @@ VALIDATE(){
 }
 
 USAGE(){
-    if [ $# -eq 0 ]
-    then
-        echo "Please pass the arguments along with script "
-    fi
+    echo "Please pass the arguments along with script "
 }
 
 # Checks for root access
 CHECK_ROOT
-USAGE
 
-# if [ $# -eq 0 ]
-# then
-#     USAGE
-# fi
+# Checks for the arguments
+if [ $# -eq 0 ]
+then
+    USAGE
+fi
 
 # Lopps
 # install the packages through arguments 
