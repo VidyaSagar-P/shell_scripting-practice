@@ -17,6 +17,7 @@ VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo "$2..FAILED"
+        echo "Script execution stopped due to above failure"
         exit 1
     else
         echo "$2..SUCCESS"
