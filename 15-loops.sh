@@ -26,7 +26,9 @@ VALIDATE(){
 
 USAGE(){
     if [ $? -eq 0]
-    echo "Please pass the arguments along with script "
+    then
+        echo "Please pass the arguments along with script "
+    fi
 }
 
 # Checks for root access
