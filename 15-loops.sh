@@ -9,7 +9,7 @@ then
 fi
 
 # installing packages
-dnf list installed mysqls
+dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
