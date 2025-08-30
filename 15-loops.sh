@@ -19,11 +19,11 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$Y $2..$N FAILED"
+        echo -e "$2.. FAILED"
         echo "Script execution stopped due to above failure"
         exit 1
     else
-        echo -e "$Y $2..$N SUCCESS"
+        echo -e "$2.. SUCCESS"
     fi
 }
 
