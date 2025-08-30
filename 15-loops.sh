@@ -41,10 +41,11 @@ CHECK_ROOT
 # install the packages through arguments 
 for package in $@  #$@ all the arguments passes through the script
 do
-    USAGE
+    
     dnf list installed $package
     dnf install $package -y
     VALIDATE $? "installing $package"
+    USAGE
 done
 
 
