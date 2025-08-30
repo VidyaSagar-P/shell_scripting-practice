@@ -11,7 +11,7 @@ fi
 # installing packages
 dnf list installed mysql
 
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then
     echo "mysql not installed, Going to install it"
     dnf install mysql -y
@@ -23,6 +23,6 @@ then
         echo "mysql installation..SUCCESS"
     fi
 else
-    echo "mysql already installed"
+    echo "mysql is already installed"
 fi
 
