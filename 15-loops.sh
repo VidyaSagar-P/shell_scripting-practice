@@ -24,12 +24,18 @@ VALIDATE(){
     fi
 }
 
+USAGE(){
+    if [ $? -eq 0]
+    echo "Please pass the arguments along with script "
+}
+
 # Checks for root access
 CHECK_ROOT
 
 # Lopps
 # install the packages through arguments 
 for package in $@  #$@ all the arguments passes through the script
+USAGE
 do
     dnf list installed $package
     dnf install $package -y
