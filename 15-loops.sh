@@ -25,23 +25,27 @@ VALIDATE(){
 }
 
 USAGE(){
-    if [ $? -eq 1 ]
+    if [ $# -eq 0 ]
     then
         echo "Please pass the arguments along with script "
+        exit 1
     fi
 }
 
 # Checks for root access
 CHECK_ROOT
 
+if
+
 # Lopps
 # install the packages through arguments 
 for package in $@  #$@ all the arguments passes through the script
 do
+    USAGE
     dnf list installed $package
     dnf install $package -y
     VALIDATE $? "installing $package"
-    USAGE
+
 done
 
 
