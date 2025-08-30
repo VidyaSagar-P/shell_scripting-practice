@@ -25,7 +25,7 @@ VALIDATE(){
 }
 
 USAGE(){
-    if [ $? -eq 0 ]
+    if [ $? -eq 1 ]
     then
         echo "Please pass the arguments along with script "
     fi
@@ -40,8 +40,8 @@ for package in $@  #$@ all the arguments passes through the script
 do
     dnf list installed $package
     dnf install $package -y
-    USAGE
     VALIDATE $? "installing $package"
+    USAGE
 done
 
 
