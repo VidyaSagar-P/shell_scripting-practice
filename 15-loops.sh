@@ -9,12 +9,12 @@ then
 fi
 
 # installing packages
-dnf list installed mysql
+dnf list installed mysqls
 
 if [ $? -ne 0 ]
 then
     echo "mysql not installed, Going to install it"
-    dnf install mysql -y
+    dnf install mysqls -y
     if [ $? -ne 0 ]
     then
         echo "there is an error installing mysql, please check the script"
