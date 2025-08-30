@@ -18,7 +18,7 @@ N="\e[0m"
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
-        echo "Proceed with ROOT priveleges" &>> $LOG_FILE
+        echo "Proceed with ROOT priveleges" | tee -a $LOG_FILE
         exit 1
     fi
 }
@@ -27,15 +27,15 @@ VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo -e "$2.. FAILED"
-        echo "Script execution stopped due to above failure" &>> $LOG_FILE
+        echo "Script execution stopped due to above failure" | tee -a $LOG_FILE
         exit 1
     else
-        echo -e "$2.. SUCCESS" &>> $LOG_FILE
+        echo -e "$2.. SUCCESS" | tee -a $LOG_FILE
     fi
 }
 
 USAGE(){
-    echo -e "$R Please pass the arguments along with script $N" &>> $LOG_FILE
+    echo -e "$R Please pass the arguments along with script $N" | tee -a $LOG_FILE
 }
 
 # Checks for root access
@@ -47,7 +47,7 @@ then
     USAGE
 fi
 
-echo "Script started executing at:: $(date)"  &>> $LOG_FILE
+echo "Script started executing at:: $(date)"  | tee -a $LOG_FILE
 
 # Lopps
 # install the packages through arguments 
@@ -57,9 +57,9 @@ do
     if [ $? -ne 0 ]
     then
         dnf install $package -y &>> $LOG_FILE
-        VALIDATE $? "installing $package" &>> $LOG_FILE
+        VALIDATE $? "installing $package" | tee -a $LOG_FILE
     else
-        echo -e "$G $package is already installed $N" &>> $LOG_FILE
+        echo -e "$G $package is already installed $N" | tee -a $LOG_FILE
     fi
    
 done
