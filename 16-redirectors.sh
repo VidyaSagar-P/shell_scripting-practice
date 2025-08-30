@@ -53,10 +53,10 @@ echo "Script started executing at:: $(date)"  &>> $LOG_FILE
 # install the packages through arguments 
 for package in $@  #$@ all the arguments passes through the script
 do
-    dnf list installed $package
+    dnf list installed $package &>> $LOG_FILE
     if [ $? -ne 0 ]
     then
-        dnf install $package -y
+        dnf install $package -y &>> $LOG_FILE
         VALIDATE $? "installing $package" &>> $LOG_FILE
     else
         echo -e "$G $package is already installed $N" &>> $LOG_FILE
