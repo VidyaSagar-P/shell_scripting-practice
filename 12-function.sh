@@ -3,7 +3,7 @@
 USERID=$(id -u)
 
 #functions
-ROOT(){
+CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then 
         echo "Proceed with root priveleges"
@@ -20,7 +20,8 @@ VALIDATE(){
     fi
 }
 # -------------------
-ROOT
+CHECK_ROOT
+
 #Mysql installation
 dnf list installed mysql
 if [ $? -ne 0 ]
