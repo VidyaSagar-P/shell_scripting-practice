@@ -25,7 +25,7 @@ VALIDATE(){
 }
 
 USAGE(){
-    if [ $? -eq 0]
+    if [ $? -eq 0 ]
     then
         echo "Please pass the arguments along with script "
     fi
