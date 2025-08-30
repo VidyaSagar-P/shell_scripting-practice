@@ -1,7 +1,10 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 
 # functins
@@ -20,12 +23,12 @@ VALIDATE(){
         echo "Script execution stopped due to above failure"
         exit 1
     else
-        echo "$2..SUCCESS"
+        echo -e "$Y $2..SUCCESS $N"
     fi
 }
 
 USAGE(){
-    echo "Please pass the arguments along with script "
+    echo -e "$R Please pass the arguments along with script $N "
 }
 
 # Checks for root access
@@ -47,7 +50,7 @@ do
         dnf install $package -y
         VALIDATE $? "installing $package"
     else
-        echo "$package is already installed"
+        echo -e "$G $package is already installed $N"
     fi
    
 done
