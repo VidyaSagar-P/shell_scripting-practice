@@ -40,10 +40,11 @@ for package in $@  #$@ all the arguments passes through the script
 do
     dnf list installed $package
     dnf install $package -y
+    USAGE
     VALIDATE $? "installing $package"
 done
 
-USAGE
+
 
 
 # installing packages
