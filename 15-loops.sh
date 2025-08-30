@@ -28,7 +28,6 @@ USAGE(){
     if [ $# -eq 0 ]
     then
         echo "Please pass the arguments along with script "
-        exit 1
     fi
 }
 
