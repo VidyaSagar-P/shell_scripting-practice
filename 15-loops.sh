@@ -35,7 +35,7 @@ USAGE(){
 # Checks for root access
 CHECK_ROOT
 
-if
+
 
 # Lopps
 # install the packages through arguments 
@@ -45,7 +45,6 @@ do
     dnf list installed $package
     dnf install $package -y
     VALIDATE $? "installing $package"
-
 done
 
 
