@@ -24,30 +24,41 @@ VALIDATE(){
     fi
 }
 
+# Checks for root access
+CHECK_ROOT
+
+# Lopps
+# install the packages through arguments 
+for package in $@  #$@ all the arguments passes through the script
+do
+    dnf list installed $package
+    dnf install $package -y
+    VALIDATE $? "installing $package"
+done
 
 
 # installing packages
 #mysql installation
-dnf list installed mysql
+# dnf list installed mysql
 
-if [ $? -ne 0 ]
-then
-    echo "mysql not installed, Going to install it"
-    dnf install mysql -y
-    VALIDATE $? "installing mysql"
-else
-    echo "mysql is already installed"
-fi
+# if [ $? -ne 0 ]
+# then
+#     echo "mysql not installed, Going to install it"
+#     dnf install mysql -y
+#     VALIDATE $? "installing mysql"
+# else
+#     echo "mysql is already installed"
+# fi
 
-#nginx installation
-dnf list installed nginx
+# #nginx installation
+# dnf list installed nginx
 
-if [ $? -ne 0 ]
-then
-    echo "nginx not installed, Going to install it"
-    dnf install nginx -y
-    VALIDATE $? "installing nginx"
-else
-    echo "nginx is already installed"
-fi
+# if [ $? -ne 0 ]
+# then
+#     echo "nginx not installed, Going to install it"
+#     dnf install nginx -y
+#     VALIDATE $? "installing nginx"
+# else
+#     echo "nginx is already installed"
+# fi
 
