@@ -41,10 +41,14 @@ fi
 # install the packages through arguments 
 for package in $@  #$@ all the arguments passes through the script
 do
-    
     dnf list installed $package
-    dnf install $package -y
-    VALIDATE $? "installing $package"
+    if [ $? -ne 0 ]
+    then
+        dnf install $package -y
+        VALIDATE $? "installing $package"
+    else
+        echo "$package is already installed"
+    fi
    
 done
 
