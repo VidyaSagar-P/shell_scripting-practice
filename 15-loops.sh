@@ -34,8 +34,12 @@ USAGE(){
 
 # Checks for root access
 CHECK_ROOT
-
 USAGE
+
+# if [ $# -eq 0 ]
+# then
+#     USAGE
+# fi
 
 # Lopps
 # install the packages through arguments 
